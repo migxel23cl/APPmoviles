@@ -1,11 +1,21 @@
+/* Fondo blanco para todo el ion-content */
+ion-content {
+  --background: #D9D9D9; /* Fondo blanco para todo el contenido */
+}
+
+ion-toolbar {
+  --background: #284B63; /* Fondo amarillo para la barra superior */
+}
+
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
 #container strong {
@@ -16,12 +26,21 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
 #container a {
   text-decoration: none;
+}
+
+/* Estilo del botón */
+ion-button {
+  --background: #3C6E71; /* Color de fondo del botón */
+  --background-hover: #0056b3; /* Color al pasar el ratón */
+  --border-radius: 5px; /* Bordes redondeados */
+  --color: white; /* Color del texto */
+  margin-top: 20px; /* Espacio superior */
+  padding: 10px 20px; /* Tamaño del botón */
+  width: 100%; /* Botón de ancho completo */
 }

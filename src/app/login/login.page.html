@@ -10,4 +10,31 @@
       <ion-title size="large">Login</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="login-container">
+    <ion-list>
+      <!-- Input para el Usuario -->
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+      </ion-item>
+
+      <!-- Input para la Contraseña -->
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+      </ion-item>
+
+      <!-- Texto para recuperar contraseña -->
+      <ion-text color="primary">
+        <a [routerLink]="['/passrecover']" class="recover-link">Recuperar contraseña</a>
+      </ion-text>
+
+      <!-- Botón para Iniciar Sesión -->
+      <ion-button expand="full" (click)="iniciarSesion()">
+        Iniciar Sesión
+      </ion-button>
+    </ion-list>
+  </div>
 </ion-content>
+

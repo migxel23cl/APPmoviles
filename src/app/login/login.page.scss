@@ -1,0 +1,42 @@
+/* Fondo blanco para todo el ion-content */
+ion-content {
+  --background: black; /* Fondo blanco para toda la página */
+}
+
+#login-container {
+  padding: 20px;
+  background-color: black; /* Fondo negro para el contenedor del login */
+  border-radius: 10px; /* Bordes redondeados */
+  color: white; /* Texto blanco dentro del contenedor */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%; /* Posición más abajo */
+  transform: translateY(-50%);
+}
+
+/* Personalización de los inputs */
+ion-item {
+  margin-bottom: 20px;
+  --background: transparent; /* Fondo transparente para los inputs */
+}
+
+ion-label {
+  color: yellow; /* Color de las etiquetas de los inputs */
+}
+
+ion-input {
+  --color: white; /* Color del texto dentro del input */
+  --placeholder-color: gray; /* Color del placeholder */
+  --highlight-color-focused: yellow; /* Color de la línea de enfoque */
+}
+
+ion-button {
+  margin-top: 20px;
+  --background: #007bff; /* Color del botón */
+  --background-hover: #0056b3;
+  --border-radius: 5px;
+  --color: white;
+}
+
+  
