@@ -1,39 +1,43 @@
-/* Fondo blanco para todo el ion-content */
+
 ion-content {
-  --background: black; /* Fondo blanco para toda la página */
+  --background: black;
+}
+
+ion-toolbar {
+  --background: #284B63;
 }
 
 #login-container {
   padding: 20px;
-  background-color: black; /* Fondo negro para el contenedor del login */
-  border-radius: 10px; /* Bordes redondeados */
-  color: white; /* Texto blanco dentro del contenedor */
+  background-color: black;
+  border-radius: 10px; 
+  color: white; 
   position: absolute;
   left: 0;
   right: 0;
-  top: 40%; /* Posición más abajo */
+  top: 40%; 
   transform: translateY(-50%);
 }
 
-/* Personalización de los inputs */
+
 ion-item {
   margin-bottom: 20px;
-  --background: transparent; /* Fondo transparente para los inputs */
+  --background: transparent;
 }
 
 ion-label {
-  color: yellow; /* Color de las etiquetas de los inputs */
+  color: yellow; 
 }
 
 ion-input {
-  --color: white; /* Color del texto dentro del input */
-  --placeholder-color: gray; /* Color del placeholder */
-  --highlight-color-focused: yellow; /* Color de la línea de enfoque */
+  --color: white;
+  --placeholder-color: gray; 
+  --highlight-color-focused: yellow; 
 }
 
 ion-button {
   margin-top: 20px;
-  --background: #007bff; /* Color del botón */
+  --background: #007bff; 
   --background-hover: #0056b3;
   --border-radius: 5px;
   --color: white;

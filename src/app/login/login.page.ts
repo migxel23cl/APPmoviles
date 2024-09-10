@@ -17,7 +17,7 @@ export class LoginPage {
     console.log('Usuario:', this.usuario);
     console.log('Contraseña:', this.contrasena);
     // Ejemplo de navegación después de iniciar sesión
-    this.router.navigate(['/home']);
+    this.router.navigate(['/director']);
   }
 }
 
