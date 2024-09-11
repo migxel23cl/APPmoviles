@@ -13,11 +13,15 @@ export class LoginPage {
   constructor(private router: Router) {}
 
   iniciarSesion() {
-    // Aquí puedes agregar la lógica para iniciar sesión
+    // Guardamos el nombre del usuario en localStorage
+    localStorage.setItem('usuario', this.usuario);
+
     console.log('Usuario:', this.usuario);
     console.log('Contraseña:', this.contrasena);
-    // Ejemplo de navegación después de iniciar sesión
+
+    // Navegamos a la página del director
     this.router.navigate(['/director']);
   }
 }
+
 

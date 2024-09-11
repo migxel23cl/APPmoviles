@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-director',
   templateUrl: './director.page.html',
   styleUrls: ['./director.page.scss'],
 })
-export class DirectorPage implements OnInit {
+export class DirectorPage {
+  nombreUsuario: string = '';
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    // Recuperamos el nombre del usuario desde localStorage
+    this.nombreUsuario = localStorage.getItem('usuario') || 'Usuario';
   }
-
 }
