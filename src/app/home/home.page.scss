@@ -1,10 +1,6 @@
-/* Fondo blanco para todo el ion-content */
-ion-content {
-  --background: black; 
-}
 
-ion-toolbar {
-  --background: #284B63; 
+ion-content {
+  --background: #022F40; 
 }
 
 #container {
@@ -36,7 +32,7 @@ ion-toolbar {
 
 
 ion-button {
-  --background: #3C6E71;
+  --background: #046E8F;
   --background-hover: #0056b3; 
   --border-radius: 5px; 
   --color: white; 
@@ -52,4 +48,8 @@ ion-button {
   margin-left: 60px
 }
 
+
+#container h1{
+  text-align: center;
+}
 

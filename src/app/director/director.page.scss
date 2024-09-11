@@ -1,2 +1,54 @@
-
+ion-toolbar {
+    --background: #0090C1
+  }
+  ion-header {
+    --background: #0090C1; /* Fondo azul para el encabezado */
+    --color: white; /* Texto blanco en el encabezado */
+  }
+  
+  ion-toolbar {
+    --background: #007bb5; /* Fondo más oscuro para la barra de herramientas */
+  }
+  
+  ion-title {
+    font-size: 1.5em; /* Tamaño del título */
+  }
+  
+  ion-content {
+    --background: #022F40; /* Fondo oscuro para el contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente negro */
+    border-radius: 10px; /* Bordes redondeados */
+    color: white; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    width: 90%; /* Ancho del contenedor */
+    max-width: 400px; /* Ancho máximo del contenedor */
+  }
+  
+  h2 {
+    margin-bottom: 20px; /* Espacio debajo del mensaje de bienvenida */
+    font-size: 1.5em; /* Tamaño del texto */
+  }
+  
+  ion-button {
+    margin-top: 10px;
+    --background: #007bff; /* Color de fondo del botón */
+    --background-hover: #0056b3; /* Color al hacer hover */
+    --border-radius: 5px; /* Bordes redondeados */
+    --color: white; /* Color del texto del botón */
+    --padding-start: 20px; /* Padding horizontal del botón */
+    --padding-end: 20px; /* Padding horizontal del botón */
+    width: 100%; /* Botones ocupan todo el ancho del contenedor */
+  }
+  
+  ion-button:first-of-type {
+    margin-top: 0; /* El primer botón no tiene margen superior */
+  }
   
