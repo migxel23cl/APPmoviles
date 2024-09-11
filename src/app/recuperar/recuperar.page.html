@@ -29,9 +29,21 @@
 
       <!-- Botón para mostrar la contraseña (aparece después de recibir el código) -->
       <ion-button expand="full" (click)="mostrarContrasena()" *ngIf="codigoEnviado">
-        Mostrar Contraseña
+        RECUPERAR
+      </ion-button>
+
+      <!-- Label que muestra la contraseña recuperada -->
+      <ion-item *ngIf="contrasenaRecuperada">
+        <ion-label>Tu Contraseña: {{ contrasena }}</ion-label>
+      </ion-item>
+
+      <!-- Botón para volver al login (aparece después de mostrar la contraseña) -->
+      <ion-button expand="full" (click)="volverAlLogin()" *ngIf="contrasenaRecuperada">
+        Volver al Login
       </ion-button>
     </ion-list>
   </div>
 </ion-content>
+
+
 

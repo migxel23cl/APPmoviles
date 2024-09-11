@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular'; // Importa el NavController para la navegación
 
 @Component({
   selector: 'app-recuperar',
@@ -6,29 +7,42 @@ import { Component } from '@angular/core';
   styleUrls: ['./recuperar.page.scss'],
 })
 export class RecuperarPage {
-  correo: string = '';
+  correo: string = '';  // Inicializa las variables
   codigo: string = '';
-  codigoEnviado: boolean = false; // Para controlar la visibilidad del input de código
+  codigoEnviado: boolean = false;
+  contrasenaRecuperada: boolean = false;
+  contrasena: string = '';
 
-  constructor() {}
+  constructor(private navCtrl: NavController) {} // Inyecta NavController
 
+  // Simula el envío del código
   enviarCodigo() {
     if (this.correo) {
-      console.log('Enviando código al correo:', this.correo);
-      // Aquí iría la lógica para enviar el código
       this.codigoEnviado = true;
+      // Lógica para enviar el código al correo
+      console.log('Código enviado a: ' + this.correo);
     } else {
-      console.log('Por favor, ingrese el correo electrónico.');
+      console.error('Debes ingresar un correo electrónico válido');
     }
   }
 
+  // Simula la recuperación de la contraseña
   mostrarContrasena() {
     if (this.codigo) {
-      console.log('Código ingresado:', this.codigo);
-      // Aquí iría la lógica para verificar el código y mostrar la contraseña
+      // Simula la validación del código y la recuperación de la contraseña
+      this.contrasena = '123456'; // Simula una contraseña recuperada
+      this.contrasenaRecuperada = true;
+      console.log('Contraseña recuperada: ' + this.contrasena);
     } else {
-      console.log('Por favor, ingrese el código de verificación.');
+      console.error('Debes ingresar el código de verificación');
     }
   }
+
+  // Función para redirigir al login
+  volverAlLogin() {
+    this.navCtrl.navigateBack('/login');  // Navega de vuelta a la página de login
+  }
 }
+
+
 
