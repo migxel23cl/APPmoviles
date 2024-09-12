@@ -9,7 +9,6 @@ export class DirectorPage {
   nombreUsuario: string = '';
 
   constructor() {
-    // Recuperamos el nombre del usuario desde localStorage
     this.nombreUsuario = localStorage.getItem('usuario') || 'Usuario';
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular'; // Importa el NavController para la navegación
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recuperar',
@@ -7,7 +7,7 @@ import { NavController } from '@ionic/angular'; // Importa el NavController para
   styleUrls: ['./recuperar.page.scss'],
 })
 export class RecuperarPage {
-  correo: string = '';  // Inicializa las variables
+  correo: string = '';
   codigo: string = '';
   codigoEnviado: boolean = false;
   contrasenaRecuperada: boolean = false;
@@ -15,22 +15,18 @@ export class RecuperarPage {
 
   constructor(private navCtrl: NavController) {} // Inyecta NavController
 
-  // Simula el envío del código
   enviarCodigo() {
     if (this.correo) {
       this.codigoEnviado = true;
-      // Lógica para enviar el código al correo
       console.log('Código enviado a: ' + this.correo);
     } else {
       console.error('Debes ingresar un correo electrónico válido');
     }
   }
 
-  // Simula la recuperación de la contraseña
   mostrarContrasena() {
     if (this.codigo) {
-      // Simula la validación del código y la recuperación de la contraseña
-      this.contrasena = '123456'; // Simula una contraseña recuperada
+      this.contrasena = '123456'; 
       this.contrasenaRecuperada = true;
       console.log('Contraseña recuperada: ' + this.contrasena);
     } else {
@@ -38,7 +34,7 @@ export class RecuperarPage {
     }
   }
 
-  // Función para redirigir al login
+
   volverAlLogin() {
     this.navCtrl.navigateBack('/login');  // Navega de vuelta a la página de login
   }

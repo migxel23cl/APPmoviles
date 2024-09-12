@@ -1,14 +1,14 @@
 ion-toolbar {
-  --background: #007bb5; /* Fondo más oscuro para la barra de herramientas */
+  --background: #007bb5; 
 }
 
 ion-header {
-  --background: #0090C1; /* Fondo azul para el encabezado */
-  --color: white; /* Texto blanco en el encabezado */
+  --background: #0090C1; 
+  --color: white; 
 }
 
 ion-title {
-  font-size: 1.5em; /* Tamaño del título */
+  font-size: 1.5em; 
 }
 
 ion-content {
@@ -17,36 +17,36 @@ ion-content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Padding para evitar que el contenido toque los bordes */
+  padding: 20px; 
 }
 
 .container {
   padding: 20px;
-  background-color: none; /* Fondo semitransparente negro */
-  border-radius: 10px; /* Bordes redondeados */
-  color: white; /* Color del texto */
-  text-align: center; /* Centrar el texto */
-  width: 90%; /* Ancho del contenedor */
-  max-width: 400px; /* Ancho máximo del contenedor */
-  position: relative; /* Posición relativa para ajustar el margen superior */
-  top: 20%; /* Ajusta la posición vertical del contenedor */
+  background-color: none; 
+  border-radius: 10px; 
+  color: white; 
+  text-align: center; 
+  width: 90%; 
+  max-width: 400px; 
+  position: relative; 
+  top: 20%; 
   margin-left: 5%;
 }
 
 h2 {
-  margin-bottom: 20px; /* Espacio debajo del mensaje de bienvenida */
-  font-size: 1.5em; /* Tamaño del texto */
+  margin-bottom: 20px; 
+  font-size: 1.5em; 
 }
 
 ion-button {
   margin-top: 10px;
-  --background: #007bff; /* Color de fondo del botón */
-  --background-hover: #0056b3; /* Color al hacer hover */
-  --border-radius: 5px; /* Bordes redondeados */
-  --color: white; /* Color del texto del botón */
-  --padding-start: 20px; /* Padding horizontal del botón */
-  --padding-end: 20px; /* Padding horizontal del botón */
-  width: 100%; /* Botones ocupan todo el ancho del contenedor */
+  --background: #007bff;
+  --background-hover: #0056b3;
+  --border-radius: 5px; 
+  --color: white; 
+  --padding-start: 20px; 
+  --padding-end: 20px;
+  width: 100%; 
 }
 
 ion-button:first-of-type {

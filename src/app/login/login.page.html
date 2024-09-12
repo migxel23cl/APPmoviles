@@ -13,24 +13,20 @@
 
   <div id="login-container">
     <ion-list>
-      <!-- Input para el Usuario -->
       <ion-item>
         <ion-label>Usuario: </ion-label>
         <ion-input type="text" [(ngModel)]="usuario"></ion-input>
       </ion-item>
 
-      <!-- Input para la Contraseña -->
       <ion-item>
         <ion-label>Contraseña: </ion-label>
         <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
       </ion-item>
 
-      <!-- Texto para recuperar contraseña -->
       <ion-text color="primary">
         <a [routerLink]="['/recuperar']" class="recover-link">Recuperar contraseña</a>
       </ion-text>
 
-      <!-- Botón para Iniciar Sesión -->
       <ion-button expand="full" (click)="iniciarSesion()">
         Iniciar Sesión
       </ion-button>

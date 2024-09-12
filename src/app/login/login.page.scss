@@ -18,7 +18,7 @@ ion-item {
   border-radius: 5px; /* Bordes redondeados */
   --inner-padding-end: 10px; /* Ajusta el padding interno */
   --inner-padding-start: 10px;
-  border: none; /* Elimina bordes del contenedor */
+  border: none; 
 }
 
 ion-label {
@@ -26,7 +26,7 @@ ion-label {
   margin-bottom: 5px;
   font-size: 14px;
   font-weight: bold;
-  color: var(--ion-color-dark); /* Color oscuro para el texto */
+  color: var(--ion-color-dark); 
 }
 
 ion-input {
@@ -34,16 +34,16 @@ ion-input {
   padding: 10px;
   width: 100%;
   font-size: 16px;
-  background-color: var(--ion-color-light); /* Fondo claro para el input */
+  background-color: var(--ion-color-light);
   color: var(--ion-color-dark); /* Color del texto */
-  border: none; /* Sin borde visible */
-  border-radius: 5px; /* Bordes redondeados */
-  box-shadow: none; /* Elimina el borde celeste en enfoque */
+  border: none; 
+  border-radius: 5px; 
+  box-shadow: none;
 }
 
 ion-input:focus {
-  outline: none; /* Elimina el borde de enfoque */
-  box-shadow: none; /* Elimina la sombra azulada en enfoque */
+  outline: none; 
+  box-shadow: none; 
 }
 
 ion-text {
