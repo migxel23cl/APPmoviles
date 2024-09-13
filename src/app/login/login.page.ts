@@ -17,10 +17,9 @@ export class LoginPage {
     // Expresión regular para validar correo electrónico
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Verificar si el usuario ha ingresado un correo electrónico válido
     if (!emailPattern.test(this.usuario)) {
       this.errorMessage = 'Por favor, ingrese un correo electrónico válido.';
-      return; // Salir del método si la validación falla
+      return;
     }
 
     localStorage.setItem('usuario', this.usuario);
