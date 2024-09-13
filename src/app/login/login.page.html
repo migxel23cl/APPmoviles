@@ -15,7 +15,7 @@
     <ion-list>
       <ion-item>
         <ion-label>Usuario: </ion-label>
-        <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+        <ion-input type="text" [(ngModel)]="usuario" (ngModelChange)="errorMessage = ''"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -30,7 +30,13 @@
       <ion-button expand="full" (click)="iniciarSesion()">
         Iniciar Sesión
       </ion-button>
+
+      <!-- Mensaje de error -->
+      <ion-text color="danger" *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+      </ion-text>
     </ion-list>
   </div>
 </ion-content>
+
 

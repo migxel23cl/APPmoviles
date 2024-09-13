@@ -59,3 +59,20 @@ ion-button {
   text-align: center;
 }
 
+/* Elimina el fondo del contenedor del spinner */
+#carga {
+  background: transparent; /* O puedes usar 'none' para eliminar cualquier fondo */
+  box-shadow: none; /* Elimina cualquier sombra que pueda estar en el contenedor */
+}
+
+/* Opcional: Elimina el fondo de los ítems si es necesario */
+ion-item {
+  background: transparent; /* Hace el fondo del ion-item transparente */
+}
+
+/* Ajusta el spinner si es necesario */
+mat-spinner {
+  --mat-progress-spinner-stroke-width: 4px; /* Cambia el grosor del borde del spinner si es necesario */
+  width: 60px;
+  height: 60px;
+}
