@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './servicios/auth.guard';
 
 const routes: Routes = [
   {
@@ -18,10 +19,23 @@ const routes: Routes = [
   {
     path: 'recuperar',
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
-  },  {
-    path: 'director',
-    loadChildren: () => import('./director/director.module').then( m => m.DirectorPageModule)
   },
+  {
+    path: 'director',
+    loadChildren: () => import('./director/director.module').then( m => m.DirectorPageModule),
+    canActivate: [authGuard]
+  },
+
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
+
+  {
+    path: '**',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
+  },
+
 
 ];
 
