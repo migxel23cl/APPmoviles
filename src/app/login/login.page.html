@@ -12,31 +12,43 @@
   </ion-header>
 
   <div id="login-container">
-    <ion-list>
-      <ion-item>
-        <ion-label>Usuario: </ion-label>
-        <ion-input type="text" [(ngModel)]="usuario" (ngModelChange)="errorMessage = ''"></ion-input>
-      </ion-item>
+    <form (ngSubmit)="iniciarSesion()" #loginForm="ngForm">
+      <ion-list>
+        <ion-item>
+          <ion-label>Correo: </ion-label>  <!-- Cambiado de "Usuario" a "Correo" -->
+          <ion-input type="text" [(ngModel)]="correo" name="correo" required (ngModelChange)="errorMessage = ''"></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label>Contraseña: </ion-label>
-        <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-label>Contraseña: </ion-label>
+          <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required></ion-input>
+        </ion-item>
+        
+        <!-- Enlace para recuperar contraseña -->
+        <ion-text color="primary">
+          <a [routerLink]="['/recuperar']" class="recover-link">Recuperar contraseña</a>
+        </ion-text>
 
-      <ion-text color="primary">
-        <a [routerLink]="['/recuperar']" class="recover-link">Recuperar contraseña</a>
-      </ion-text>
+        <!-- Botón de iniciar sesión -->
+        <ion-button expand="full" type="submit" [disabled]="!loginForm.form.valid">
+          Iniciar Sesión
+        </ion-button>
 
-      <ion-button expand="full" (click)="iniciarSesion()">
-        Iniciar Sesión
-      </ion-button>
+        <!-- Enlace para el registro -->
+        <ion-text color="primary">
+          <a [routerLink]="['/registro']" class="register-link">¿No tienes cuenta? Regístrate</a>
+        </ion-text>
 
-      <!-- Mensaje de error -->
-      <ion-text color="danger" *ngIf="errorMessage">
-        <p>{{ errorMessage }}</p>
-      </ion-text>
-    </ion-list>
+        <!-- Mensaje de error -->
+        <ion-text color="danger" *ngIf="errorMessage">
+          <p>{{ errorMessage }}</p>
+        </ion-text>
+      </ion-list>
+    </form>
   </div>
 </ion-content>
+
+
+
 
 

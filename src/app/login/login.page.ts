@@ -1,34 +1,30 @@
 import { Component } from '@angular/core';
+import { UserService } from '../servicios/storage.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: 'login.page.html',
-  styleUrls: ['login.page.scss'],
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  usuario: string = '';
+  correo: string = '';  // Cambiado de "usuario" a "correo"
   contrasena: string = '';
   errorMessage: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {}
 
-  iniciarSesion() {
-    // Expresión regular para validar correo electrónico
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(this.usuario)) {
-      this.errorMessage = 'Por favor, ingrese un correo electrónico válido.';
-      return;
+  async iniciarSesion() {
+    const usuarioValido = await this.userService.loginUser(this.correo, this.contrasena);
+    
+    if (usuarioValido) {
+      this.router.navigate(['/director']);  // Navega a la página principal si el login es exitoso
+    } else {
+      this.errorMessage = 'Usuario o contraseña incorrectos.';
     }
-
-    localStorage.setItem('usuario', this.usuario);
-
-    console.log('Usuario:', this.usuario);
-    console.log('Contraseña:', this.contrasena);
-
-    this.router.navigate(['/director']);
   }
 }
+
+
 
 
