@@ -36,6 +36,7 @@ export class AdminPage implements OnInit {
 
   modificarUsuario(id: string) {
     // Implementar lógica para modificar el usuario
+    this.navCtrl.navigateForward(`/moduser/${id}`);
   }
 
   async eliminarUsuario(id: string) {

@@ -11,11 +11,11 @@ export class AuthenticatorService {
 
   async loginBDD(correo: string, contrasena: string): Promise<boolean> {
     try {
-      console.log('Buscando usuario con correo:', correo);  // Verificar correo
+      console.log('Buscando usuario con correo:', correo);
       const res = await this.storage.get(correo);
       console.log('Usuario encontrado en la BDD:', res);  // Verificar qué se obtiene del almacenamiento
   
-      if (res && res.contrasena === contrasena) {  // Asegúrate de que la clave sea `password` y no `contrasena`
+      if (res && res.contrasena === contrasena) { 
         this.connnectionStatus = true;
         console.log('Login exitoso, connnectionStatus:', this.connnectionStatus);
         return true;
@@ -44,7 +44,7 @@ export class AuthenticatorService {
   async registrar(usuario: any): Promise<boolean> {
     try {
       const res = await this.storage.set(usuario.correo, usuario);
-      console.log('Usuario registrado:', usuario);  // Verifica que se esté registrando correctamente
+      console.log('Usuario registrado:', usuario);
       return res != null;
     } catch (error) {
       console.error('Error al registrar usuario:', error);

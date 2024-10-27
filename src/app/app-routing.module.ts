@@ -37,7 +37,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'moduser',
+    path: 'moduser/:id',
     loadChildren: () => import('./moduser/moduser.module').then( m => m.ModuserPageModule)
   },
 
