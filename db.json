@@ -1,11 +1,6 @@
 {
   "usuarios": [
     {
-      "correo": "profesor1@escuela.com",
-      "contrasena": "profesor123",
-      "id": "d761"
-    },
-    {
       "correo": "admin1@escuela.com",
       "contrasena": "admin123",
       "id": "08bf"
@@ -16,14 +11,8 @@
       "id": "c31d"
     },
     {
-      "id": "6ace",
-      "correo": "holachaval@gmail.com",
-      "contrasena": "12345",
-      "password": "12345"
-    },
-    {
-      "id": "d80b",
-      "correo": "si@gmail.com",
+      "id": "692a",
+      "correo": "miguel@gmail.com",
       "contrasena": "12345"
     }
   ]

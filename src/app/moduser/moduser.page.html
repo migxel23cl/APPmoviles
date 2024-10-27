@@ -2,51 +2,31 @@
   <ion-toolbar>
     <ion-title>Modificar Usuario</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/admin"></ion-back-button> <!-- Botón para regresar a la vista Admin -->
+      <ion-back-button defaultHref="/admin"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Modificar Usuario</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="moduser-container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Editar Información del Usuario</ion-card-title>
-      </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <ion-label>Correo: </ion-label>
+        <ion-input type="text" value="{{ usuario?.correo }}" readonly></ion-input>
+      </ion-item>
 
-      <ion-card-content>
-        <form (ngSubmit)="modificarUsuario()" #moduserForm="ngForm">
-          <ion-list>
-            <!-- Input para correo -->
-            <ion-item>
-              <ion-label position="floating">Correo</ion-label>
-              <ion-input type="email" [(ngModel)]="usuario.correo" name="correo" required></ion-input>
-            </ion-item>
+      <ion-item>
+        <ion-label>Contraseña Actual: </ion-label>
+        <ion-input type="password" value="{{ usuario?.contrasena }}" readonly></ion-input>
+      </ion-item>
 
-            <!-- Input para contraseña -->
-            <ion-item>
-              <ion-label position="floating">Contraseña</ion-label>
-              <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
-            </ion-item>
+      <ion-item>
+        <ion-label>Nueva Contraseña: </ion-label>
+        <ion-input type="password" [(ngModel)]="nuevaContrasena" required></ion-input>
+      </ion-item>
+    </ion-list>
 
-            <!-- Mensaje de error, si es necesario -->
-            <ion-text color="danger" *ngIf="errorMessage">
-              <p>{{ errorMessage }}</p>
-            </ion-text>
-
-            <!-- Botón para guardar los cambios -->
-            <ion-button expand="full" type="submit" [disabled]="!moduserForm.form.valid">
-              Guardar Cambios
-            </ion-button>
-          </ion-list>
-        </form>
-      </ion-card-content>
-    </ion-card>
+    <ion-button expand="full" (click)="guardarCambios()">Guardar Cambios</ion-button>
   </div>
 </ion-content>
+
