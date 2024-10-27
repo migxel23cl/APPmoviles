@@ -34,6 +34,7 @@ export class RegistroPage {
       
       // Redirigir a la página de login después de registrar
       this.router.navigate(['/login']);
+      console.log("Usuario agregado a la base de datos")
     } catch (error) {
       // Manejar errores
       this.errorMessage = 'Error al registrar el usuario. Intenta nuevamente.';

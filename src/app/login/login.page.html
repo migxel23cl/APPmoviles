@@ -42,6 +42,11 @@
           <a [routerLink]="['/registro']" class="register-link">¿No tienes cuenta? Regístrate</a>
         </ion-text>
 
+        <!-- Botón para ir a la vista de administración -->
+        <ion-button expand="full" fill="outline" (click)="irAAdmin()">
+          Ir a Admin
+        </ion-button>
+
         <!-- Mensaje de error -->
         <ion-text color="danger" *ngIf="errorMessage">
           <p>{{ errorMessage }}</p>
@@ -50,6 +55,7 @@
     </form>
   </div>
 </ion-content>
+
 
 
 

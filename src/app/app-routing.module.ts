@@ -36,11 +36,16 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
 
+  {
+    path: 'moduser',
+    loadChildren: () => import('./moduser/moduser.module').then( m => m.ModuserPageModule)
+  },
 
   {
     path: '**',
     loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
-  },
+  }
+
 
 
 

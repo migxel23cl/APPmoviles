@@ -53,7 +53,13 @@ export class LoginPage {
       console.error('Error al obtener usuarios: ', error);
     }
   }
+
+  // Método para redirigir a la página de administración
+  irAAdmin() {
+    this.router.navigate(['/admin']); // Cambiar a la ruta de la vista de admin
+  }
 }
+
 
 
 

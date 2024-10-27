@@ -14,6 +14,16 @@
       "correo": "nuevoUsuario@escuela.com",
       "contrasena": "nuevaContrasena",
       "id": "c31d"
+    },
+    {
+      "id": "6ace",
+      "correo": "hola@gmail.com",
+      "contrasena": "12345"
+    },
+    {
+      "id": "d80b",
+      "correo": "si@gmail.com",
+      "contrasena": "12345"
     }
   ]
 }
