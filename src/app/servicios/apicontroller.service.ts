@@ -14,23 +14,24 @@ export class APIControllerService {
   constructor(private http: HttpClient) { }
 
 
+
   getUsuarios(): Observable<any> {
-    return this.http.get(`${this.apiURL}/adminuser`);
+    return this.http.get(`${this.apiURL}/usuarios`);
   }
 
 
   postUsuarios(data: any): Observable<any> {
-    return this.http.post(`${this.apiURL}/adminuser`, data);
+    return this.http.post(`${this.apiURL}/usuarios`, data);
   }
 
 
   updateUsuarios(id: string, data: any): Observable<any> {
-    return this.http.put(`${this.apiURL}/adminuser/${id}`, data);
+    return this.http.put(`${this.apiURL}/usuarios/${id}`, data);
   }
 
 
   deleteUsuarios(id: string): Observable<any> {
-    return this.http.delete(`${this.apiURL}/adminuser/${id}`);
+    return this.http.delete(`${this.apiURL}/usuarios/${id}`);
   }
 }
 

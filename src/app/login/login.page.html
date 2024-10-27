@@ -18,7 +18,7 @@
     <form (ngSubmit)="iniciarSesion()" #loginForm="ngForm">
       <ion-list>
         <ion-item>
-          <ion-label>Correo: </ion-label>  <!-- Cambiado de "Usuario" a "Correo" -->
+          <ion-label>Correo: </ion-label>
           <ion-input type="text" [(ngModel)]="correo" name="correo" required (ngModelChange)="errorMessage = ''"></ion-input>
         </ion-item>
 
@@ -26,7 +26,7 @@
           <ion-label>Contraseña: </ion-label>
           <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required></ion-input>
         </ion-item>
-        
+
         <!-- Enlace para recuperar contraseña -->
         <ion-text color="primary">
           <a [routerLink]="['/recuperar']" class="recover-link">Recuperar contraseña</a>
@@ -50,6 +50,7 @@
     </form>
   </div>
 </ion-content>
+
 
 
 

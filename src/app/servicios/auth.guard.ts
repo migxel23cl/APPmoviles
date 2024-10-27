@@ -1,22 +1,24 @@
 import { CanActivateFn, Router } from '@angular/router';
-import { UserService } from './storage.service';
+import { AuthenticatorService } from './authenticator.service';
 import { inject } from '@angular/core';
 
 export const authGuard: CanActivateFn = async (route, state) => {
-
-  // Instanciamos el servicio de usuario y el enrutador
-  const authService = inject(UserService);
+  const authService = inject(AuthenticatorService);
   const router = inject(Router);
 
-  // Esperamos la respuesta de isConected
-  const isConected = await authService.isConected();
+  // Aquí esperamos el estado de conexión antes de proceder
+  const isLoggedIn = await authService.isConectedAsync();
 
-  // Si está conectado, permitimos el acceso
-  if (isConected) {
-    return true;
+  // Log para verificar el estado de autenticación
+  console.log('AuthGuard - isLoggedIn:', isLoggedIn);
+
+  if (isLoggedIn) {
+    console.log('Acceso permitido');
+    return true; // Permite el acceso
   } else {
-    // Si no está autenticado, redirigimos al login
-    router.navigate(['/login']);
+    console.log('Redirigiendo al home');
+    router.navigate(['/home']); // Redirige si no está autenticado
     return false;
   }
 };
+

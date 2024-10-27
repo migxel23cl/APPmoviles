@@ -4,54 +4,34 @@ import { Storage } from '@ionic/storage-angular';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-  private _storage: Storage | null = null;
-  private USERS_KEY = 'users';
-  private CURRENT_USER_KEY = 'currentUser'; // Para guardar al usuario autenticado
+export class StorageService {
+  private bdd: Storage = new Storage();
+  private bddStatus: Promise<void>;
 
+  // Inicializar el almacenamiento
   constructor(private storage: Storage) {
-    this.init();
+    this.bddStatus = this.onInit();
   }
-
-  async init() {
+  async onInit(): Promise<void> {
     const storage = await this.storage.create();
-    this._storage = storage;
+    this.bdd = storage;
   }
 
-  // Guardar nuevo usuario
-  async addUser(usuario: any): Promise<any> {
-    const users = (await this.getUsers()) || [];
-    users.push(usuario);
-    return this._storage?.set(this.USERS_KEY, users);
+  async BDDConectada(): Promise<void> {
+    await this.bddStatus;
+  }
+  async get(key: string): Promise<any> {
+    await this.BDDConectada()
+    return this.bdd.get(key);
   }
 
-  // Obtener usuarios
-  async getUsers(): Promise<any[]> {
-    return this._storage?.get(this.USERS_KEY) || [];
+  async set(key: string, valor: any): Promise<any> {
+    await this.BDDConectada()
+    return this.bdd.set(key, valor);
   }
-
-  // Validar credenciales de usuario y guardar al usuario autenticado
-  async loginUser(correo: string, contrasena: string): Promise<any> {
-    const users = await this.getUsers();
-    const usuario = users.find((user: any) => user.correo === correo && user.contrasena === contrasena);
-
-    if (usuario) {
-      // Guardar el usuario actual
-      await this._storage?.set(this.CURRENT_USER_KEY, usuario);
-    }
-
-    return usuario;
-  }
-
-  // Verificar si hay un usuario autenticado
-  async isConected(): Promise<boolean> {
-    const currentUser = await this._storage?.get(this.CURRENT_USER_KEY);
-    return currentUser ? true : false;
-  }
-
-  // Cerrar sesión
-  async logout(): Promise<void> {
-    await this._storage?.remove(this.CURRENT_USER_KEY);
+  async remove(key: string) {
+    await this.BDDConectada()
+    this.bdd.remove(key);
   }
 }
 

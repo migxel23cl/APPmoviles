@@ -1,13 +1,19 @@
 {
-    "usuario": [
-      {
-        "correo": "profesor1@escuela.com",
-        "contrasena": "profesor123"
-      },
-      {
-        "correo": "admin1@escuela.com",
-        "contrasena": "admin123"
-      }
-    ]
-  }
-  
+  "usuarios": [
+    {
+      "correo": "profesor1@escuela.com",
+      "contrasena": "profesor123",
+      "id": "d761"
+    },
+    {
+      "correo": "admin1@escuela.com",
+      "contrasena": "admin123",
+      "id": "08bf"
+    },
+    {
+      "correo": "nuevoUsuario@escuela.com",
+      "contrasena": "nuevaContrasena",
+      "id": "c31d"
+    }
+  ]
+}

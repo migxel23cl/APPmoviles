@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: 'director',
     loadChildren: () => import('./director/director.module').then( m => m.DirectorPageModule),
-    canActivate: [authGuard] //si no estas registrado no podras entrar a esta ruta
+    canActivate: [authGuard]
   },
 
   {
