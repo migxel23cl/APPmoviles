@@ -1,0 +1,13 @@
+{
+    "usuario": [
+      {
+        "correo": "profesor1@escuela.com",
+        "contrasena": "profesor123"
+      },
+      {
+        "correo": "admin1@escuela.com",
+        "contrasena": "admin123"
+      }
+    ]
+  }
+  
