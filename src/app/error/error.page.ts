@@ -11,7 +11,7 @@ export class ErrorPage {
   constructor(private router: Router) {}
 
   volverAtras() {
-    this.router.navigate(['/director']); // Navega a la vista "director"
+    this.router.navigate(['/director']);
   }
 }
 

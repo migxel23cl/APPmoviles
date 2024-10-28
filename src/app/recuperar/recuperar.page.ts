@@ -13,7 +13,7 @@ export class RecuperarPage {
   contrasenaRecuperada: boolean = false;
   contrasena: string = '';
 
-  constructor(private navCtrl: NavController) {} // Inyecta NavController
+  constructor(private navCtrl: NavController) {} 
 
   enviarCodigo() {
     if (this.correo) {

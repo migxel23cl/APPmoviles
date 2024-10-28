@@ -8,9 +8,9 @@ import { APIControllerService } from 'src/app/servicios/apicontroller.service';
   styleUrls: ['./moduser.page.scss'],
 })
 export class ModuserPage implements OnInit {
-  id!: string;  // Use definite assignment assertion
+  id!: string; //el signo garantiza que el valor de la variabel nunca sera null
   usuario: any;
-  nuevaContrasena: string = ''; // Para almacenar la nueva contraseña
+  nuevaContrasena: string = ''; 
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,7 +31,7 @@ export class ModuserPage implements OnInit {
     });
   }
 
-  //metodo actualizar usuario
+  //metodo modificar usuario
   async guardarCambios() {
     try {
       const usuarioActualizado = { ...this.usuario, contrasena: this.nuevaContrasena };
@@ -39,7 +39,7 @@ export class ModuserPage implements OnInit {
       await this.apiService.updateUsuarios(this.id, usuarioActualizado).toPromise();
       console.log('Contraseña actualizada correctamente');
 
-      // Redirigir a la página de administración
+      
       this.router.navigate(['/admin']);
     } catch (error) {
       console.error('Error al actualizar la contraseña:', error);

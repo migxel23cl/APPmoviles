@@ -6,10 +6,10 @@ export const authGuard: CanActivateFn = async (route, state) => {
   const authService = inject(AuthenticatorService);
   const router = inject(Router);
 
-  // Aquí esperamos el estado de conexión antes de proceder
+  
   const isLoggedIn = await authService.isConectedAsync();
 
-  // Log para verificar el estado de autenticación
+ 
   console.log('AuthGuard - isLoggedIn:', isLoggedIn);
 
   if (isLoggedIn) {
@@ -17,7 +17,7 @@ export const authGuard: CanActivateFn = async (route, state) => {
     return true; // Permite el acceso
   } else {
     console.log('Redirigiendo al home');
-    router.navigate(['/home']); // Redirige si no está autenticado
+    router.navigate(['/home']);
     return false;
   }
 };

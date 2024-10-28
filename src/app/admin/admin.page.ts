@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { APIControllerService } from 'src/app/servicios/apicontroller.service';
 import { StorageService } from '../servicios/storage.service';
-import { NavController } from '@ionic/angular';  // Importamos NavController
+import { NavController } from '@ionic/angular';  
 
 @Component({
   selector: 'app-admin',
@@ -15,7 +15,7 @@ export class AdminPage implements OnInit {
   constructor(
     private api: APIControllerService,
     private storageService: StorageService,
-    private navCtrl: NavController // Inyectamos NavController
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
@@ -52,8 +52,7 @@ export class AdminPage implements OnInit {
   }
 
   irARegistro() {
-    // Redirigir a la página de registro
-    this.navCtrl.navigateForward('/registro');  // Ajusta la ruta según la página de registro en tu aplicación
+    this.navCtrl.navigateForward('/registro');  
   }
 }
 

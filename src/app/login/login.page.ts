@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { APIControllerService } from '../servicios/apicontroller.service'; // Ajusta la ruta si es necesario
-import { AuthenticatorService } from '../servicios/authenticator.service'; // Asegúrate de importar el servicio de autenticación
+import { APIControllerService } from '../servicios/apicontroller.service'; 
+import { AuthenticatorService } from '../servicios/authenticator.service'; 
 
 @Component({
   selector: 'app-login',
@@ -16,15 +16,15 @@ export class LoginPage {
   constructor(
     private apiService: APIControllerService,
     private router: Router,
-    private authenticatorService: AuthenticatorService  // Inyectar el servicio de autenticación
+    private authenticatorService: AuthenticatorService  
   ) {}
 
   async iniciarSesion() {
     try {
-      // Obtener todos los usuarios desde la API
+      
       const usuarios = await this.apiService.getUsuarios().toPromise();
 
-      // Buscar si el usuario con el correo y la contraseña ingresados existe
+      
       const usuarioEncontrado = usuarios.find(
         (usuario: any) => usuario.correo === this.correo && usuario.contrasena === this.contrasena
       );
@@ -37,13 +37,13 @@ export class LoginPage {
         
         if (loginExitoso) {
           console.log('Login correcto, redirigiendo a la vista del director...');
-          this.router.navigate(['/director']);  // Cambiar a la página de director
+          this.router.navigate(['/director']);  
         } else {
           this.errorMessage = 'Correo o contraseña incorrectos';
           console.log('Login fallido, redirigiendo al login.');
         }
       } else {
-        // Si no se encuentra el usuario, mostrar mensaje de error
+       
         this.errorMessage = 'Correo o contraseña incorrectos';
         console.log('Usuario no encontrado en la base de datos');
       }
@@ -54,9 +54,9 @@ export class LoginPage {
     }
   }
 
-  // Método para redirigir a la página de administración
+
   irAAdmin() {
-    this.router.navigate(['/admin']); // Cambiar a la ruta de la vista de admin
+    this.router.navigate(['/admin']);
   }
 }
 

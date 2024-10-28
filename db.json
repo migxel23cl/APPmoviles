@@ -9,6 +9,21 @@
       "correo": "nuevoUsuario@escuela.com",
       "contrasena": "777",
       "id": "c31d"
+    },
+    {
+      "id": "e55a",
+      "correo": "mati@gmail.com",
+      "contrasena": " 12345"
+    },
+    {
+      "id": "932e",
+      "correo": "miguel@gmail.com",
+      "contrasena": "123"
+    },
+    {
+      "id": "7c20",
+      "correo": "esquerra@gmail.com",
+      "contrasena": "holachaval"
     }
   ]
 }
