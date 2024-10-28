@@ -31,12 +31,12 @@ export class ModuserPage implements OnInit {
     });
   }
 
+  //metodo actualizar usuario
   async guardarCambios() {
     try {
-      // Actualizar la contraseña del usuario
       const usuarioActualizado = { ...this.usuario, contrasena: this.nuevaContrasena };
 
-      await this.apiService.updateUsuarios(this.id, usuarioActualizado).toPromise(); // Asegúrate de que tu API tenga un método para actualizar el usuario
+      await this.apiService.updateUsuarios(this.id, usuarioActualizado).toPromise();
       console.log('Contraseña actualizada correctamente');
 
       // Redirigir a la página de administración

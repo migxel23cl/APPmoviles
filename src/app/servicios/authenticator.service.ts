@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
+import { APIControllerService } from './apicontroller.service'; // Importar el servicio API
 
 @Injectable({
   providedIn: 'root',
@@ -7,40 +8,47 @@ import { StorageService } from './storage.service';
 export class AuthenticatorService {
   connnectionStatus: boolean;
 
-  constructor(private storage: StorageService) {this.connnectionStatus= false;}
+  // Inyectar APIControllerService en el constructor
+  constructor(private storage: StorageService, private apiService: APIControllerService) { 
+    this.connnectionStatus = false;
+  }
 
+  // Método para iniciar sesión buscando en la base de datos
   async loginBDD(correo: string, contrasena: string): Promise<boolean> {
     try {
-      console.log('Buscando usuario con correo:', correo);
-      const res = await this.storage.get(correo);
-      console.log('Usuario encontrado en la BDD:', res);  // Verificar qué se obtiene del almacenamiento
+      // Obtener usuarios directamente desde la API
+      const usuarios = await this.apiService.getUsuarios().toPromise();
+      
+      // Buscar si el correo y la contraseña coinciden
+      const usuarioEncontrado = usuarios.find((usuario: any) => usuario.correo === correo && usuario.contrasena === contrasena);
   
-      if (res && res.contrasena === contrasena) { 
+      if (usuarioEncontrado) {
+        // Si se encuentra el usuario, actualizar el estado de conexión
         this.connnectionStatus = true;
-        console.log('Login exitoso, connnectionStatus:', this.connnectionStatus);
         return true;
       } else {
         this.connnectionStatus = false;
-        console.log('Login fallido, connnectionStatus:', this.connnectionStatus);
         return false;
       }
     } catch (error) {
-      console.log('Error en el sistema: ' + error);
+      console.error('Error al autenticar:', error);
       this.connnectionStatus = false;
       return false;
     }
   }
-  
 
+  // Verificar si el usuario está conectado
   async isConectedAsync(): Promise<boolean> {
     console.log('isConectedAsync - Estado de conexión:', this.connnectionStatus);
     return this.connnectionStatus;
   }
 
+  // Método para cerrar sesión
   logout() {
     this.connnectionStatus = false;
   }
 
+  // Método para registrar un nuevo usuario
   async registrar(usuario: any): Promise<boolean> {
     try {
       const res = await this.storage.set(usuario.correo, usuario);
@@ -51,6 +59,6 @@ export class AuthenticatorService {
       return false;
     }
   }
-  
 }
+
 

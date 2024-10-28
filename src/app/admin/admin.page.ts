@@ -35,7 +35,7 @@ export class AdminPage implements OnInit {
   }
 
   modificarUsuario(id: string) {
-    // Implementar lógica para modificar el usuario
+    // logica en moduser.ts
     this.navCtrl.navigateForward(`/moduser/${id}`);
   }
 
