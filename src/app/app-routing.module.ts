@@ -42,9 +42,16 @@ const routes: Routes = [
   },
 
   {
+    path: 'qrpage',
+    loadChildren: () => import('./qrpage/qrpage.module').then( m => m.QrpagePageModule)
+  },
+  
+  {
     path: '**',
     loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
-  }
+  },
+ 
+
 
 
 
